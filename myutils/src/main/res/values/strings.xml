@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyUtils</string>
+    <string name="form_is_empty">%1$s harus diisi.</string>
+</resources>
