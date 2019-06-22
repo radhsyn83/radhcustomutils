@@ -68,12 +68,12 @@ public class RadhUtils {
 
             if (TextUtils.isEmpty(fm.getEditText().getText())) {
                 Log.d("RadhLog", "${et.formName} isEmpty");
-                listener.onInvalid(context.getResources().getString(R.string.form_is_empty));
+                listener.onInvalid(String.format(context.getResources().getString(R.string.radh_form_is_empty), fm.getFormName()));
                 return;
             } else {
                 if (fm.getFormLenght() > 0) {
                     if (fm.getEditText().length() < fm.getFormLenght()) {
-                        listener.onInvalid(context.getResources().getString(R.string.form_is_empty));
+                        listener.onInvalid(String.format(context.getResources().getString(R.string.radh_form_length), fm.getFormName(), Integer.toString(fm.getFormLenght())));
                         return;
                     }
                 }

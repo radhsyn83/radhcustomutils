@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyUtils</string>
-    <string name="form_is_empty">%1$s harus diisi.</string>
+    <string name="radh_form_is_empty">%1$s harus diisi.</string>
+    <string name="radh_form_length">%1$s minimal %2$s karakter.</string>
 </resources>
