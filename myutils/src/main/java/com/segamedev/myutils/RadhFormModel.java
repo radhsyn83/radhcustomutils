@@ -13,6 +13,12 @@ public class RadhFormModel {
     private String formName;
     private int formLenght;
 
+    public RadhFormModel(EditText editText, String formName, int formLenght) {
+        this.editText = editText;
+        this.formName = formName;
+        this.formLenght = formLenght;
+    }
+
     public EditText getEditText() {
         return editText;
     }
