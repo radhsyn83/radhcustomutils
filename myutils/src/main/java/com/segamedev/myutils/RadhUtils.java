@@ -26,6 +26,14 @@ public class RadhUtils {
         return convertedValue;
     }
 
+    public String toNumberFormat(String value) {
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
+        String convertedValue = formatter.format(Double.parseDouble(value)).replaceAll(",", ".");
+        convertedValue = convertedValue;
+
+        return convertedValue;
+    }
+
     @SuppressLint("SimpleDateFormat")
     public String dateFormatCustom(String time) {
         Date dateTime = null;
@@ -61,10 +69,10 @@ public class RadhUtils {
         }
     }
 
-    public void formValidation(Context context, ArrayList<RadhFormModel> formModel, FormValidationListener listener) {
+    public void formValidation(Context context, ArrayList<FormValidationModel> formModel, FormValidationListener listener) {
         int x = 0;
         while (x < formModel.size()) {
-            RadhFormModel fm = formModel.get(x);
+            FormValidationModel fm = formModel.get(x);
 
             if (TextUtils.isEmpty(fm.getEditText().getText())) {
                 Log.d("RadhLog", "${et.formName} isEmpty");
@@ -78,6 +86,8 @@ public class RadhUtils {
                     }
                 }
             }
+            x += 1;
         }
+        listener.onValid();
     }
 }
